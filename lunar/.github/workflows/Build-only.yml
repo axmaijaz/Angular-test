@@ -10,9 +10,7 @@ on:
 
 jobs:
   build:
-     name: Build-check
-    
-
+     name: Build-lunar-check
      runs-on: ubuntu-latest
   
     steps:
