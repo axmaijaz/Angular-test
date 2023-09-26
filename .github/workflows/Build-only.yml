@@ -21,9 +21,8 @@ jobs:
         #   node-version: 12
         
       - name: Install NPM Dependencies
-        run:  |
-              npm install --force  
-              nvm use 16 
+        run:  npm install --force  
+               
 
       - name: Install Angular@9
         run: npm install -g @angular/cli
