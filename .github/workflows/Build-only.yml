@@ -24,8 +24,7 @@ jobs:
         run: |
          npm install --force
          npm update
-         npm cache clean --force
-         npm install
+      
 
 
       - name: Install Angular@9
