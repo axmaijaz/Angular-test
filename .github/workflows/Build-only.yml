@@ -35,28 +35,25 @@ jobs:
     #          mkdir -p node_modules
     #          cp -r ng-uikit-pro-standard node_modules/
       - name: Build Code
-        continue-on-error: true # Continue even if the build fails
-        run: |
-          
-          ng build
-          if [ $? -eq 0 ]; then
-             echo "::set-output name=status::success"
-          else
-          echo "::set-output name=status::failure"
-          echo "Build has been failed and PR is getting close"
-          PR_NUMBER="${{ github.event.pull_request.number }}"
-          API_URL="https://api.github.com/repos/axmaijaz/repo1/pulls/$PR_NUMBER"
-          PAYLOAD='{"state":"closed"}'
+        run:   ng build
+        #   if [ $? -eq 0 ]; then
+        #      echo "::set-output name=status::success"
+        #   else
+        #   echo "::set-output name=status::failure"
+        #   echo "Build has been failed and PR is getting close"
+        #   PR_NUMBER="${{ github.event.pull_request.number }}"
+        #   API_URL="https://api.github.com/repos/axmaijaz/repo1/pulls/$PR_NUMBER"
+        #   PAYLOAD='{"state":"closed"}'
 
-          echo "Closing PR $PR_NUMBER due to build failure"
+        #   echo "Closing PR $PR_NUMBER due to build failure"
           
-          # Close the PR
-          curl -X PATCH -H "Authorization: token $GITHUB_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -d "$PAYLOAD" \
-            "$API_URL"
-           fi
-        id: build-status
+        #   # Close the PR
+        #   curl -X PATCH -H "Authorization: token $GITHUB_TOKEN" \
+        #     -H "Accept: application/vnd.github.v3+json" \
+        #     -d "$PAYLOAD" \
+        #     "$API_URL"
+        #    fi
+        # id: build-status
         # continue-on-error: true # Continue even if the build fails
           # node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng build
   
