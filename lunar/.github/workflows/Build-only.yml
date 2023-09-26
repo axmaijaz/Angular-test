@@ -10,7 +10,8 @@ on:
 
 jobs:
   build:
-     name: Build-Check
+     name: Build-check
+    
 
      runs-on: ubuntu-latest
   
