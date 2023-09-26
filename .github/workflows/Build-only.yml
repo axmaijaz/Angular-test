@@ -22,10 +22,7 @@ jobs:
         
       - name: Install NPM Dependencies
         run: |
-         npm install --force
-         npm update
-      
-
+         npm install --force  
 
       - name: Install Angular@9
         run: npm install -g @angular/cli
