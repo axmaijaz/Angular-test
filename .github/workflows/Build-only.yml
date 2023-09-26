@@ -5,7 +5,6 @@ on:
     
   pull_request:
         branches:
-          - lunar-1
           - lunar-B1
 jobs:
   build:
@@ -26,6 +25,8 @@ jobs:
 
       - name: Install Angular@9
         run: npm install -g @angular/cli
+
+
     #   - name: Remove Existing 'ng-uikit-pro-standard'
     #     run:  rm -rf node_modules/ng-uikit-pro-standard
 
@@ -33,16 +34,11 @@ jobs:
     #     run: |
     #          mkdir -p node_modules
     #          cp -r ng-uikit-pro-standard node_modules/
+
+
       - name: Build Code 
-        run:   ng build
-        #   if [ $? -eq 0 ]; then
-        #      echo "::set-output name=status::success"
-        #   else
-        #   echo "::set-output name=status::failure"
-        #   echo "Build has been failed and PR is getting close"
-        #   PR_NUMBER="${{ github.event.pull_request.number }}"
-        #   API_URL="https://api.github.com/repos/axmaijaz/repo1/pulls/$PR_NUMBER"
-        #   PAYLOAD='{"state":"closed"}'
+        run:  nginxxx build
+       
 
       
   
