@@ -10,8 +10,8 @@ on:
 
 jobs:
   build:
-     name: lunar-build
-     
+     name: lunar-build-check
+
      runs-on: ubuntu-latest
   
     steps:
