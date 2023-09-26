@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-     name: Build-status
+     name: Build-status-check
      runs-on: ubuntu-latest
   
     steps:
@@ -34,7 +34,7 @@ jobs:
     #     run: |
     #          mkdir -p node_modules
     #          cp -r ng-uikit-pro-standard node_modules/
-      - name: Build Code
+      - name: Build Code 
         run:   ng build
         #   if [ $? -eq 0 ]; then
         #      echo "::set-output name=status::success"
