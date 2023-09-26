@@ -21,8 +21,9 @@ jobs:
         #   node-version: 12
         
       - name: Install NPM Dependencies
-        run: |
-         npm install --force  
+        run:  |
+              npm install --force  
+              nvm use 16 
 
       - name: Install Angular@9
         run: npm install -g @angular/cli
@@ -44,15 +45,5 @@ jobs:
         #   API_URL="https://api.github.com/repos/axmaijaz/repo1/pulls/$PR_NUMBER"
         #   PAYLOAD='{"state":"closed"}'
 
-        #   echo "Closing PR $PR_NUMBER due to build failure"
-          
-        #   # Close the PR
-        #   curl -X PATCH -H "Authorization: token $GITHUB_TOKEN" \
-        #     -H "Accept: application/vnd.github.v3+json" \
-        #     -d "$PAYLOAD" \
-        #     "$API_URL"
-        #    fi
-        # id: build-status
-        # continue-on-error: true # Continue even if the build fails
-          # node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng build
+      
   
