@@ -6,7 +6,7 @@ on:
   pull_request:
         branches:
           - lunar-1
-          
+          - lunar-B1
 
 jobs:
   build:
