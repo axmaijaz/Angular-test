@@ -37,8 +37,8 @@ jobs:
 
 
       - name: Build Code 
-        run:  nginxxx build
-       
+        run:  ng build
+          
 
       
   
