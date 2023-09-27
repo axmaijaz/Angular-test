@@ -1,11 +1,11 @@
 name: Frontend Build-Only Pipeline
 
 on:
-  push:
     
   pull_request:
         branches:
           - lunar-B1
+          - lunar-C1
 jobs:
   build:
      
