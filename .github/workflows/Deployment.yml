@@ -8,18 +8,12 @@ on:
     pull_request_review:
         types:
             - submitted
-    # workflow_dispatch:
-    #     inputs:
-    #         releaseType:
-    #             description: 'Where to release (Staging or Prod)?'
-    #             required: true
-    #             default: 'staging'
     workflow_dispatch:
       inputs:
         production_approval:
           description: 'Approve Production Deployment'
           required: true
-          default: 'false'
+          default: 'staging'
 jobs:
     deploy_staging:
         name: Deploy to Staging
