@@ -2,43 +2,39 @@ name: Frontend Build-Only Pipeline
 
 on:
   push:
-    
+
   pull_request:
         branches:
+          - Development
+          - lunar-C1
           - lunar-B1
+          
 jobs:
   build:
-     name: Build-status-check
      runs-on: ubuntu-latest
      steps:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Install Node@16.14.0
+      - name: Install Node@12
         uses: actions/setup-node@v2
         with:
-          node-version: 16.14.0
+          node-version: 12
         
       - name: Install NPM Dependencies
         run:  npm install --force  
                
-
       - name: Install Angular@9
-        run: npm install -g @angular/cli
+        run: npm install -g @angular/cli@9.1.11
 
+      # - name: Remove Existing 'ng-uikit-pro-standard'
+      #   run:  rm -rf node_modules/ng-uikit-pro-standard
 
-    #   - name: Remove Existing 'ng-uikit-pro-standard'
-    #     run:  rm -rf node_modules/ng-uikit-pro-standard
+      # - name: Copy New 'ng-uikit-pro-standard'
+      #   run: |
+      #        mkdir -p node_modules 
+      #        cp -r ng-uikit-pro-standard node_modules/
 
-    #   - name: Copy New 'ng-uikit-pro-standard'
-    #     run: |
-    #          mkdir -p node_modules
-    #          cp -r ng-uikit-pro-standard node_modules/
-
-
-      - name: Build Code 
-        run:  nginxxx build
-       
-
-      
-  
+      - name: Build Code
+        run: ng build 
+      #   run:  node --max-old-space-size=8192 ./node_modules/@angular/cli/bin/ng build    
