@@ -1,8 +1,6 @@
 name: Deployment Pipeline
 
 on:
-   push:
-
    workflow_run:
         workflows: ["Frontend Build-Only Pipeline"] 
         types:
