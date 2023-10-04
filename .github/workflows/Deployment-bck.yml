@@ -4,18 +4,11 @@ on:
    workflow_run:
         workflows: ["Frontend Build-Only Pipeline"] 
         types:
-            - completed
-   pull_request:
-        types:
-            - closed
-
+            - completed 
    workflow_dispatch:
        inputs:
         production_approval:
-            description: 'Approve Production Deployment'
-
-
-
+            description: 'Please Approve Production Deployment'
             required: true
             default: 'false'
 jobs:
@@ -30,10 +23,9 @@ jobs:
         # Add your build and deployment steps for staging here.
         # For example:
         - name: Build and Deploy Staging
-          run:  echo "Building and deploying to staging..."
-
-       
-
+          run: |
+            # Replace with your build and deployment commands for staging
+            echo "Building and deploying to staging..."
 
     deploy_production:
         name: Deploy to Production (Manual Approval)
@@ -50,4 +42,9 @@ jobs:
         - name: Deploy Production
           run: |
                 # Replace with your production deployment commands
-                echo "Deploying to production.>>>>>>> lunar-1
+                echo "Deploying to production..."
+
+
+
+# Add other jobs for additional environments as needed.
+# For example, you can add a job for a testing environment.
