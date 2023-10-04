@@ -18,7 +18,7 @@ on:
       inputs:
         production_approval:
           description: 'Approve Production Deployment'
-          required: false
+          required: true
           default: 'false'
 jobs:
     deploy_staging:
