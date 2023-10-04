@@ -8,7 +8,7 @@ on:
    workflow_dispatch:
        inputs:
         production_approval:
-            description: 'Approve Production Deployment'
+            description: 'Please Approve Production Deployment'
             required: true
             default: 'false'
 jobs:
