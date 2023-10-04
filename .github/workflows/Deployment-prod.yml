@@ -48,6 +48,4 @@ jobs:
         # Add your deployment steps for production here.
         # For example:
         - name: Deploy Production
-          run: |
-                # Replace with your production deployment commands
-                echo "Deploying to production.>>>>>>> lunar-1
+          run: echo "Deploying to production
