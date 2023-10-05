@@ -5,9 +5,6 @@ on:
         workflows: ["Frontend Build-Only Pipeline"] 
         types:
             - completed
-#    pull_request_review:
-#         types:
-#             - submitted 
    pull_request:
         types:
             - closed
@@ -16,6 +13,9 @@ on:
        inputs:
         production_approval:
             description: 'Approve Production Deployment'
+
+
+
             required: true
             default: 'false'
 jobs:
@@ -31,6 +31,9 @@ jobs:
         # For example:
         - name: Build and Deploy Staging
           run:  echo "Building and deploying to staging..."
+
+       
+
 
     deploy_production:
         name: Deploy to Production (Manual Approval)
