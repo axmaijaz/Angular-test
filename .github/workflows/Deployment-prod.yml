@@ -30,7 +30,7 @@ jobs:
         # Add your build and deployment steps for staging here.
         # For example:
         - name: Build and Deploy Staging
-          run:  echo "Building and deploying to staging..."
+          run:  echo "Building and deploying to Staging environment..."
 
        
 
@@ -48,7 +48,7 @@ jobs:
         # Add your deployment steps for production here.
         # For example:
         - name: Deploy Production
-          run: echo "Deploying to production..."
+          run: echo "Deploying to production environment ..."
 
 
 
