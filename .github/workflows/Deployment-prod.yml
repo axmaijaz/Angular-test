@@ -13,9 +13,6 @@ on:
        inputs:
         production_approval:
             description: 'Approve Production Deployment'
-
-
-
             required: true
             default: 'false'
 jobs:
@@ -48,7 +45,7 @@ jobs:
         # Add your deployment steps for production here.
         # For example:
         - name: Deploy Production
-          run: echo "Deploying to production environment ..."
+          run: echo "Deploying to production environment is completed..."
 
 
 
